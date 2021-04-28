@@ -4,7 +4,11 @@ function map(arr,func) {
 }
 
 function reduce(arr,func,starting) {
-  return arr.reduce(func,starting);
+  if(starting !== undefined) {
+      return arr.reduce(func,starting);
+  } else {
+    return arr.reduce(func);
+  }
 }
 
 console.log(map([1, 2, 3, -9], function(a){ return a * a }))
